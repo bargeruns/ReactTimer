@@ -105,18 +105,25 @@
 	    hashHistory = _require.hashHistory;
 
 	var Main = __webpack_require__(246);
+	var Timer = __webpack_require__(248);
+	var Countdown = __webpack_require__(249);
 
 	//load Foundation
-	__webpack_require__(248);
+	__webpack_require__(250);
 	$(document).foundation();
 
 	// app css
-	__webpack_require__(252);
+	__webpack_require__(254);
 
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
-	  React.createElement(Route, { path: '/', component: Main })
+	  React.createElement(
+	    Route,
+	    { path: '/', component: Main },
+	    React.createElement(Route, { path: 'countdown', component: Countdown }),
+	    React.createElement(IndexRoute, { component: Timer })
+	  )
 	), document.getElementById('app'));
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
@@ -26885,7 +26892,7 @@
 	          null,
 	          React.createElement(
 	            Link,
-	            { to: '/', activeClassName: 'active-link' },
+	            { to: '/countdown', activeClassName: 'active-link' },
 	            'Countdown'
 	          )
 	        )
@@ -26918,13 +26925,49 @@
 /* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Timer = function Timer() {
+	  return React.createElement(
+	    'h3',
+	    null,
+	    'Timer.jsx'
+	  );
+	};
+
+	module.exports = Timer;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Countdown = function Countdown() {
+	  return React.createElement(
+	    'h3',
+	    null,
+	    'Countdown.jsx'
+	  );
+	};
+
+	module.exports = Countdown;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(249);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(251)(content, {});
+	var update = __webpack_require__(253)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26941,10 +26984,10 @@
 	}
 
 /***/ },
-/* 249 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(250)();
+	exports = module.exports = __webpack_require__(252)();
 	// imports
 
 
@@ -26955,7 +26998,7 @@
 
 
 /***/ },
-/* 250 */
+/* 252 */
 /***/ function(module, exports) {
 
 	/*
@@ -27011,7 +27054,7 @@
 
 
 /***/ },
-/* 251 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -27263,16 +27306,16 @@
 
 
 /***/ },
-/* 252 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(253);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(251)(content, {});
+	var update = __webpack_require__(253)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27289,15 +27332,15 @@
 	}
 
 /***/ },
-/* 253 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(250)();
+	exports = module.exports = __webpack_require__(252)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".top-bar {\n  background-color: #333333; }\n  .top-bar ul {\n    background-color: #333333; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0; }\n", ""]);
+	exports.push([module.id, ".top-bar {\n  background-color: #333333; }\n  .top-bar ul {\n    background-color: #333333; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0; }\n  .top-bar .active-link {\n    font-weight: bold; }\n", ""]);
 
 	// exports
 
