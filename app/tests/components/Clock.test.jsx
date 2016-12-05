@@ -12,7 +12,7 @@ describe('clock component tests', () => {
   });
 });
 
-describe.only('clock render', () => {
+describe('clock render', () => {
   it('should render Clock to output', () => {
     var clock = TestUtils.renderIntoDocument(<Clock totalSeconds={62}/>);
     var $el = $(ReactDOM.findDOMNode(clock));
