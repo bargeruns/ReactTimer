@@ -26929,13 +26929,17 @@
 
 	var React = __webpack_require__(8);
 
-	var Timer = function Timer() {
-	  return React.createElement(
-	    'h3',
-	    null,
-	    'Timer.jsx'
-	  );
-	};
+	var Timer = React.createClass({
+	  displayName: 'Timer',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Timer.jsx'
+	    );
+	  }
+	});
 
 	module.exports = Timer;
 
@@ -26947,13 +26951,17 @@
 
 	var React = __webpack_require__(8);
 
-	var Countdown = function Countdown() {
-	  return React.createElement(
-	    'h3',
-	    null,
-	    'Countdown.jsx'
-	  );
-	};
+	var Countdown = React.createClass({
+	  displayName: 'Countdown',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Countdown.jsx'
+	    );
+	  }
+	});
 
 	module.exports = Countdown;
 
