@@ -6,7 +6,7 @@ var TestUtils = require('react-addons-test-utils');
 
 var CountdownForm = require('CountdownForm');
 
-describe.only('countdown form tests', () => {
+describe('countdown form tests', () => {
   it('should exist', () => {
     expect(CountdownForm).toExist();
   });
